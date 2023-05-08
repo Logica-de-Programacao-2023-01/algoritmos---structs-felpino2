@@ -1,0 +1,22 @@
+package main
+
+import "fmt"
+
+type Circulo struct {
+	Raio float64
+}
+
+func main() {
+	var cir Circulo
+	fmt.Println("Qual raio? ")
+	fmt.Scan(&cir.Raio)
+	Cir := Circulo{
+		Raio: cir.Raio,
+	}
+	fmt.Print(Area(Cir))
+}
+func Area(cir Circulo) float64 {
+
+	Area := cir.Raio * cir.Raio * 3.14
+	return Area
+}
