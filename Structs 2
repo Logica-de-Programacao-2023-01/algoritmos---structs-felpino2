@@ -1,0 +1,34 @@
+package main
+
+import "fmt"
+
+type Pessoa struct {
+	Nome     string
+	Idade    float64
+	Endereço Endereco
+}
+
+type Endereco struct {
+	Rua    string
+	Número int
+	Cidade string
+}
+
+func EndP(p Pessoa) Pessoa {
+	return Pessoa{
+		Nome:  "Mario",
+		Idade: 37,
+		Endereço: Endereco{
+			Rua:    "World 1",
+			Número: 64,
+			Cidade: "Reino do Cogumelo",
+		},
+	}
+}
+
+func main() {
+	var Barro Pessoa
+	Barro = EndP(Pessoa{})
+	fmt.Printf("Rua %s, Número %v, Cidade %s", Barro.Endereço.Rua, Barro.Endereço.Número, Barro.Endereço.Cidade)
+
+}
