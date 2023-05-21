@@ -1,0 +1,25 @@
+package main
+
+import "fmt"
+
+type Triangulo struct {
+	base   float64
+	altura float64
+}
+
+func main() {
+	var Felipe Triangulo
+	fmt.Printf("Qual a base do triângulo?")
+	fmt.Scan(&Felipe.base)
+	fmt.Println("Qual a altura?")
+	fmt.Scan(&Felipe.altura)
+	fmt.Println(Area(Triangulo{
+		base:   Felipe.base,
+		altura: Felipe.altura,
+	}))
+}
+
+func Area(Felipe Triangulo) float64 {
+	Area := (Felipe.base * Felipe.altura) / 2
+	return Area
+}
