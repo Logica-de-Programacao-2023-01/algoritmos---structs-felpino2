@@ -1,0 +1,43 @@
+package main
+
+import "fmt"
+
+type Playlist struct {
+	nome    string
+	musicas []Musica
+}
+
+type Musica struct {
+	titulo  string
+	artista string
+	duracao float64
+}
+
+func main() {
+	var cancoes Playlist
+	somaplay := 0.0
+	cancoes = playlist(Playlist{})
+	for i := 0; i < len(cancoes.musicas); i++ {
+		somaplay += cancoes.musicas[i].duracao
+	}
+	fmt.Printf("Nome da playlist: %s, tempo da playlist %f", cancoes.nome, somaplay)
+	fmt.Print(cancoes.musicas)
+}
+
+func playlist(p Playlist) Playlist {
+	return Playlist{
+		nome: "AO SOM DE LENO BREGA",
+		musicas: []Musica{
+			{
+				titulo:  "Certa Noite em Campo Grande",
+				duracao: 6.50,
+				artista: "Leno Brega",
+			},
+			{
+				titulo:  "Something",
+				artista: "The Beatles",
+				duracao: 4.20,
+			},
+		},
+	}
+}
