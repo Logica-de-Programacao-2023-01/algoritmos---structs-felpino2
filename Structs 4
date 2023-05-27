@@ -14,7 +14,6 @@ type Musica struct {
 }
 
 func main() {
-	tamanho := 0.0
 	playlist := Playlist{
 		Nome: "AO SOM DE LENO BREGA",
 		Musicas: []Musica{
@@ -35,8 +34,7 @@ func main() {
 			},
 		},
 	}
-	tamanho = somador(playlist)
-	fmt.Printf("tempo da playlist %f", tamanho)
+	fmt.Printf("Tempo da playlist %f\n", somador(playlist))
 	for _, musica := range playlist.Musicas {
 		fmt.Printf("Título da canção: %s Artista: %s, Duração: %f\n", musica.Titulo, musica.Artista, musica.Duracao)
 	}
@@ -44,10 +42,8 @@ func main() {
 
 func somador(p Playlist) float64 {
 	somaplay := 0.0
-	var cancoes Playlist
-	for i := 0; i < len(cancoes.Musicas); i++ {
-		somaplay += cancoes.Musicas[i].Duracao
+	for _, musica := range p.Musicas {
+		somaplay += musica.Duracao
 	}
 	return somaplay
 }
-
